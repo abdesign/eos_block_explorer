@@ -1,0 +1,52 @@
+{
+  "name": "eos-express-full",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "test": "mocha --require @babel/register --timeout 10000 src/test/*.js --exit",
+    "build": "rm -rf dist && webpack  --config webpack.config.js --mode development",
+    "watch:build": "webpack --watch --config webpack.config.js --mode development",
+    "watch:server": "nodemon --watch dist --watch src --watch views dist/server.js",
+    "start": "node ./dist/server.js",
+    "start:dev": "npm-run-all --parallel watch:server watch:build"
+  },
+  "dependencies": {
+    "bootstrap": "4.3.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "eosjs": "^20.0.0",
+    "express": "~4.16.1",
+    "global": "^4.4.0",
+    "hogan.js": "^3.0.2",
+    "http-errors": "~1.6.3",
+    "jquery": "^3.4.1",
+    "json-pretty-html": "^1.1.6",
+    "markdown-it": "^9.1.0",
+    "moment": "^2.24.0",
+    "morgan": "~1.9.1",
+    "mustache-express": "^1.2.8",
+    "node-fetch": "^2.6.0",
+    "popper.js": "^1.14.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "@babel/runtime": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
+    "nodemon": "^1.19.1",
+    "npm-run-all": "^4.1.5",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7",
+    "webpack-node-externals": "^1.7.2",
+    "webpack-shell-plugin": "^0.5.0"
+  }
+}

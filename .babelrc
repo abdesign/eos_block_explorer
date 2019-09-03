@@ -1,0 +1,39 @@
+{  
+    "presets": [
+        [
+            "@babel/preset-env",  
+            {
+                "debug":true 
+            }
+        ]
+    ],
+    "plugins": [
+        ["@babel/transform-runtime"]
+    ],
+    "env": {
+        "web": {
+          "presets": [
+              [
+                "@babel/preset-env",
+                {
+                    "targets": "> 0.25%, not dead"
+                }
+              ]
+            ],
+            "plugins": [
+                [
+                    "@babel/transform-runtime",
+                    {
+                        "absoluteRuntime": false,
+                        "corejs": false,
+                        "helpers": true,
+                        "regenerator": true,
+                        "useESModules": false
+                    }
+                ]
+            ]
+
+        },
+    },
+    
+}
