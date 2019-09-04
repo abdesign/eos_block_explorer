@@ -36,4 +36,22 @@ router.get('/chaininfo/:blockid', async (req, res, next) => {
  
 });
 
+/**
+ * Return the ABI for the specified account
+ */
+router.get('/abi/:accountid', async (req, res, next) => {
+
+  if (!req.params.accountid) {
+    res.status(500).send('Unable to load ABI info.')
+  } else {
+
+    
+    let Eos = new EosService();
+    let abi_info = await Eos.getAbi(req.params.accountid);
+    
+    res.json(abi_info);
+  }
+ 
+});
+
 export default router;

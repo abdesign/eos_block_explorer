@@ -1,8 +1,8 @@
 import express from 'express';
-let router = express.Router();
+let app = express();
 
-router.get('/', (req, res, next) => {
+app.get('/', (req, res, next) => {
   res.render('index', { title: 'EOS Explorer' });
 });
 
-export default router;
+export default app;

@@ -1,0 +1,20 @@
+<tr id="row-{{ row_data.block_num }}">
+    <td>{{ timestamp }}</td>
+    <td>{{ row_data.producer }}</td>
+    <td>{{ row_data.block_num }}</td>
+    <td>{{ row_data.id }}</td>
+    <td>{{ row_data.confirmed }}</td>
+    <td>{{ trans_count }}</td>
+</tr>
+<tr class="row-content row-hidden" id="row-hidden-{{ row_data.block_num }}">
+    <td colspan="7">
+        <div id="abi-markdown">
+            {{{ actions_md }}}
+        </div>
+        <br/>
+        <h3>Raw Block Info</h3>
+        <div class="raw-json">
+            {{{ block_json_html }}}
+        </div>
+    </tr>
+</tr>'

@@ -8,7 +8,8 @@ const fetch = require('node-fetch');
 class EosService {
 
   constructor() {
-    this.EosRpc =  new JsonRpc('http://jungle2.cryptolions.io:', {fetch});
+    //this.EosRpc =  new JsonRpc('http://jungle2.cryptolions.io:', {fetch});
+    this.EosRpc =  new JsonRpc('https://api.eosnewyork.io', {fetch});
   }
 
   /**
@@ -43,6 +44,26 @@ class EosService {
       }
 
       return blocks;
+
+    }catch(err){
+      console.log("Error Getting Block Info", err);
+    }
+    
+  }
+
+  /**
+   * Returns the ABI object for the specified account id
+   * @param {number} accountid 
+   */
+  async getAbi(accountid){
+    
+    let blocks = [];
+
+    try{
+      console.log("EOS SERVICE ABI",accountid)
+      let abi_info = await this.EosRpc.get_abi(accountid);
+      
+      return abi_info;
 
     }catch(err){
       console.log("Error Getting Block Info", err);
